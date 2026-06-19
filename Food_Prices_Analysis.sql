@@ -66,11 +66,38 @@ ORDER BY date DESC;
 SELECT commodity, pricetype, ROUND(AVG(price), 2) AS avg_price, COUNT(*) AS records
 FROM raw_food_prices
 GROUP BY commodity, pricetype
-ORDER BY commodity, pricetype
+ORDER BY commodity, pricetype;
 
+SELECT * 
+FROM raw_food_prices
+WHERE market_id = 1854;
 
+SELECT * 
+FROM raw_food_prices
+WHERE market = 'Hola (Tana River)';
 
+#cleaned data staging table
+CREATE TABLE staging_food_prices (
+date DATE,
+admin1 VARCHAR(100),
+admin2 VARCHAR(100),
+market VARCHAR(100),
+market_id INT,
+latitude DECIMAL(9, 2),
+longitude DECIMAL(9, 2),
+category VARCHAR(150),
+commodity VARCHAR(150),
+commodity_id INT,
+priceflag VARCHAR(100),
+pricetype VARCHAR(100),
+currency CHAR(3),
+price DECIMAL(10, 2),
+usdprice DECIMAL(10, 2),
+year INT,
+month INT,
+quantity INT,
+unit_type VARCHAR(50),
+price_per_unit DECIMAL(10, 2)
+);
 
-
-
-
+SELECT * FROM staging_food_prices LIMIT 5;
