@@ -101,3 +101,20 @@ price_per_unit DECIMAL(10, 2)
 );
 
 SELECT * FROM staging_food_prices LIMIT 5;
+
+CREATE TABLE dim_market (
+market_id INT PRIMARY KEY,
+market VARCHAR(100),
+admin1 VARCHAR(100),
+admin2 VARCHAR(100),
+latitude DECIMAL(9, 2),
+longitude DECIMAL(9, 2)
+);
+
+CREATE TABLE dim_commodity (
+commodity_id INT PRIMARY KEY,
+commodity VARCHAR(150),
+category VARCHAR(150)
+);
+
+
