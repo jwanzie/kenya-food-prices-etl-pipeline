@@ -17,3 +17,28 @@ Some commodities contain multiple `unit_type` values depending on the market or 
 #### 3. Inconsistent Units
 
 Within the `unit` column, there's a mix of plain units(`L`, `Bunch`) and other's containing quantities(`400 KG, 500ML`). This reflected a genuine difference on how commodities are sold adn the column split to two separate fields for `quantity` and `unit_type` to enable accurate calculation of price per unit
+
+### Visualisation:
+
+After data exploration and cleaning I used Metabase to create visualisations to show how much the price of Maize changed overtime and which commodities were priced the highest and which the lowest. For the first visualisation, I ran the below query 
+
+```sql
+SELECT 
+	date,
+	AVG(PRICE) AS avg_price_in_ksh
+FROM raw_food_prices
+WHERE commodity = 'Maize'
+GROUP BY date
+ORDER BY date;
+```
+
+while the below query was used for the second visualisation 
+
+```sql
+SELECT
+    commodity,
+    AVG(price) AS avg_price_in_ksh
+FROM raw_food_prices
+GROUP BY commodity
+ORDER BY avg_price DESC;
+```
