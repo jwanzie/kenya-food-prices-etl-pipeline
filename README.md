@@ -16,7 +16,7 @@ Some commodities contain multiple `unit_type` values depending on the market or 
 
 #### 3. Inconsistent Units
 
-Within the `unit` column, there's a mix of plain units(`L`, `Bunch`) and other's containing quantities(`400 KG, 500ML`). This reflected a genuine difference on how commodities are sold adn the column split to two separate fields for `quantity` and `unit_type` to enable accurate calculation of price per unit
+Within the `unit` column, there's a mix of plain units(`L`, `Bunch`) and other's containing quantities(`400 KG, 500 ML`). This reflected a genuine difference on how commodities are sold adn the column split to two separate fields for `quantity` and `unit_type` to enable accurate calculation of price per unit
 
 ### Visualisation:
 
